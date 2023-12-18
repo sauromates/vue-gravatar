@@ -37,9 +37,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "tsc": "vue-tsc",
+    "test": "vitest",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
@@ -48,20 +47,24 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.6.1",
+    "@types/jest": "^29.5.11",
     "@types/node": "^20.10.5",
     "@vitejs/plugin-vue": "^4.5.2",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
+    "@vue/test-utils": "^2.4.3",
     "@vue/tsconfig": "^0.5.0",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.19.2",
+    "happy-dom": "^12.10.3",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-dts": "^3.6.4",
+    "vitest": "^1.0.4",
     "vue": "^3.3.12",
     "vue-tsc": "^1.8.25"
   }
