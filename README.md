@@ -48,4 +48,6 @@ pnpm install && pnpm dev
 
 ## Testing
 
-Work in progress
+```sh
+pnpm test
+```
