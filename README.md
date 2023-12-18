@@ -41,7 +41,7 @@ More granular control over a Gravatar implementation may be achieved with [`useG
 Package includes simple Vue 3 application used to demonstrate it's functionality. In order to use a playground, clone this project locally and run it in dev mode.
 
 ```sh
-git clone https://github.com/sauromates/vue-gravatar
+git clone https://github.com/sauromates/vue-gravatar.git
 cd vue-gravatar
 pnpm install && pnpm dev
 ```

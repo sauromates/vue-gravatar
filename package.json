@@ -15,6 +15,11 @@
     "name": "Vsevolod Girenko",
     "email": "vs.girenko@mail.ru"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sauromates/vue-gravatar.git"
+  },
+  "bugs": "https://github.com/sauromates/vue-gravatar/issues",
   "version": "1.0.0-alpha",
   "type": "module",
   "files": [
