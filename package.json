@@ -1,6 +1,6 @@
 {
   "name": "@sauromates/vue-gravatar",
-  "description": "Package provides a reusable, customizable and fully typed Gravatar component for Vue3/Tailwind projects.",
+  "description": "Reusable, customizable and fully typed Gravatar component for Vue3/Tailwind projects.",
   "keywords": [
     "vue3",
     "ui",
