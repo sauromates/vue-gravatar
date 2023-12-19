@@ -26,16 +26,21 @@
   "version": "1.0.1-alpha",
   "type": "module",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "./dist/vue-gravatar.umd.cjs",
   "module": "./dist/vue-gravatar.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/vue-gravatar.js",
-      "require": "./dist/vue-gravatar.umd.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/vue-gravatar.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/vue-gravatar.umd.cjs"
+      }
     }
   },
   "scripts": {
