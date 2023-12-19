@@ -9,7 +9,7 @@
     "avatar",
     "gravatar"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "private": false,
   "engines": {
     "node": ">=20.0.0"

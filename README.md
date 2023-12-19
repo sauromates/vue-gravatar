@@ -55,3 +55,7 @@ pnpm install && pnpm dev
 ```sh
 pnpm test
 ```
+
+## License
+
+Licensed under the [MIT license](LICENSE)
