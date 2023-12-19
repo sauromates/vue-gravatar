@@ -1,6 +1,10 @@
 # VueGravatar
 
-Package provides a reusable, customizable and fully typed Gravatar component for Vue3/Tailwind projects.
+![npm](https://img.shields.io/npm/v/%40sauromates%2Fvue-gravatar?logo=npm)
+![npm](https://img.shields.io/npm/dt/%40sauromates/vue-gravatar?logo=npm)
+![NPM](https://img.shields.io/npm/l/%40sauromates%2Fvue-gravatar?logo=npm)
+
+Reusable, customizable and fully typed Gravatar component for Vue3/Tailwind projects.
 
 ## Installation
 
@@ -51,3 +55,7 @@ pnpm install && pnpm dev
 ```sh
 pnpm test
 ```
+
+## License
+
+Licensed under the [MIT license](LICENSE)
