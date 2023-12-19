@@ -1,11 +1,11 @@
 import { ref, computed, watch } from 'vue'
-import type { Gravatar, GravatarComposableReturn, ImageParams } from '../types/gravatar'
+import type { GravatarType, GravatarComposableReturn, ImageParams } from '../types/gravatar'
 import type { Email, ImageSize } from '../types/util'
 import { sha256 } from '../utils/sha256'
 import { createEmail } from '../utils/email'
 import { imageSize } from '../utils/size'
 
-export const useGravatar = (image: Gravatar): GravatarComposableReturn => {
+export const useGravatar = (image: GravatarType): GravatarComposableReturn => {
   const source = ref<URL | null>(null)
 
   const gravatar = computed<string>(() => source.value?.toString() ?? '')

@@ -31,7 +31,7 @@ export type ImageParams = {
   extenstion?: '.jpg'
 }
 
-export type Gravatar = { email: Email } & ImageParams
+export type GravatarType = { email: Email } & ImageParams
 
 export type GravatarComposableReturn = {
   source: Ref<URL | null>

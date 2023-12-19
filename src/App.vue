@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { ImageSizeRange } from './types/util'
 import Gravatar from './components/Gravatar.vue'
-import { type Gravatar as GravatarType, GravatarPlaceholderOption, GravatarRatingOption } from './types/gravatar'
+import { type GravatarType, GravatarPlaceholderOption, GravatarRatingOption } from './types/gravatar'
 
 const config = ref<GravatarType>({
   email: 'test@example.org',
