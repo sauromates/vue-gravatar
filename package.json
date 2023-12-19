@@ -54,6 +54,7 @@
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.5",
     "@vitejs/plugin-vue": "^4.5.2",
+    "@vitest/coverage-v8": "^1.1.0",
     "@vitest/ui": "^1.0.4",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",

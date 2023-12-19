@@ -1,11 +1,11 @@
 import { ref, computed, watch } from 'vue'
-import type { Gravatar, GravatarComposableReturn, ImageParams } from '../types/gravatar'
+import type { GravatarType, GravatarComposableReturn, ImageParams } from '../types/gravatar'
 import type { Email, ImageSize } from '../types/util'
 import { sha256 } from '../utils/sha256'
 import { createEmail } from '../utils/email'
 import { imageSize } from '../utils/size'
 
-export const useGravatar = (image: Gravatar): GravatarComposableReturn => {
+export const useGravatar = (image: GravatarType): GravatarComposableReturn => {
   const source = ref<URL | null>(null)
 
   const gravatar = computed<string>(() => source.value?.toString() ?? '')
@@ -17,7 +17,7 @@ export const useGravatar = (image: Gravatar): GravatarComposableReturn => {
       default: image.default,
       rating: image.rating,
       forceDefault: image.forceDefault,
-      extenstion: image.extenstion
+      extension: image.extension
     }
   })
   const emptyParams = computed<boolean>(() => Object.values(imageParams.value).every((item) => item === undefined))
@@ -28,7 +28,8 @@ export const useGravatar = (image: Gravatar): GravatarComposableReturn => {
   async function buildGravatarUrl(): Promise<void> {
     const gravatarBaseUrl: string = 'https://gravatar.com/avatar'
     const gravatarEmailHash: string = await sha256(email.value)
-    const gravatarSource = new URL(`${gravatarBaseUrl}/${gravatarEmailHash}`)
+    const pathname = imageParams.value.extension ? gravatarEmailHash + imageParams.value.extension : gravatarEmailHash
+    const gravatarSource = new URL(`${gravatarBaseUrl}/${pathname}`)
 
     if (emptyParams.value) {
       source.value = gravatarSource
@@ -36,8 +37,8 @@ export const useGravatar = (image: Gravatar): GravatarComposableReturn => {
     }
 
     for (const [key, value] of Object.entries(imageParams.value)) {
-      if (!value) continue
-      gravatarSource.searchParams.append(key, value.toString())
+      if (!value || key === 'extension') continue
+      gravatarSource.searchParams.append(key.toLowerCase(), value.toString())
     }
 
     source.value = gravatarSource

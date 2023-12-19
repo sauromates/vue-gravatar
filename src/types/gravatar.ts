@@ -28,10 +28,10 @@ export type ImageParams = {
   default?: GravatarPlaceholder
   rating?: GravatarRating
   forceDefault?: 'y'
-  extenstion?: '.jpg'
+  extension?: '.jpg'
 }
 
-export type Gravatar = { email: Email } & ImageParams
+export type GravatarType = { email: Email } & ImageParams
 
 export type GravatarComposableReturn = {
   source: Ref<URL | null>

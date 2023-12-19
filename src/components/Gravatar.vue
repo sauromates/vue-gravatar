@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useGravatar } from '../composables/useGravatar'
-import { type Gravatar as GravatarType } from '../types/gravatar'
+import { type GravatarType } from '../types/gravatar'
 
 const props = defineProps<GravatarType & { alt?: string }>()
 

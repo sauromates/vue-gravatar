@@ -1,6 +1,7 @@
 import { vi } from 'vitest'
 import { mount, flushPromises, type VueWrapper } from '@vue/test-utils'
 import Gravatar from '../../src/components/Gravatar.vue'
+import { GravatarPlaceholderOption, GravatarRatingOption } from '../../src/types/gravatar'
 
 describe('gravatar component', () => {
   let gravatar: VueWrapper<InstanceType<typeof Gravatar>>
@@ -40,5 +41,27 @@ describe('gravatar component', () => {
 
     expect(gravatar.vm.alt).toEqual(testAlt)
     expect(gravatar.find('img').attributes().alt).toEqual(testAlt)
+  })
+
+  describe('gravatar placeholders', () => {
+    test('placeholders match gravatar docs', () => {
+      const fixedValues: string[] = ['404', 'mp', 'identicon', 'monsterid', 'mavatar', 'retro', 'robohash', 'blank']
+      const enumValues: string[] = Object.values(GravatarPlaceholderOption)
+
+      for (const placeholder of enumValues) {
+        expect(fixedValues).toContainEqual(placeholder)
+      }
+    })
+  })
+
+  describe('gravatar rating', () => {
+    test('rating options match gravatar docs', () => {
+      const fixedValues: string[] = ['g', 'pg', 'r', 'x']
+      const enumValues: string[] = Object.values(GravatarRatingOption)
+
+      for (const ratingOption of enumValues) {
+        expect(fixedValues).toContainEqual(ratingOption)
+      }
+    })
   })
 })

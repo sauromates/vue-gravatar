@@ -8,7 +8,16 @@ export default defineConfig({
   plugins: [vue(), dts({ rollupTypes: true })],
   test: {
     globals: true,
-    environment: 'happy-dom'
+    environment: 'happy-dom',
+    coverage: {
+      enabled: true,
+      provider: 'v8',
+      include: ['src/components', 'src/composables', 'src/types', 'src/utils']
+    },
+    typecheck: {
+      enabled: true,
+      checker: 'vue-tsc'
+    }
   },
   build: {
     lib: {
