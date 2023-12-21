@@ -1,29 +1,22 @@
 {
   "name": "@sauromates/vue-gravatar",
-  "version": "1.0.0-beta",
+  "version": "1.0.0",
   "description": "Reusable, customizable and fully typed Gravatar component for Vue3 projects.",
   "license": "MIT",
   "author": "Vsevolod Girenko <vs.girenko@mail.ru>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sauromates/vue-gravatar.git"
-  },
+  "repository": "https://github.com/sauromates/vue-gravatar.git",
   "bugs": "https://github.com/sauromates/vue-gravatar/issues",
   "type": "module",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/vue-gravatar.js"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/vue-gravatar.umd.cjs"
-      }
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vue-gravatar.js",
+      "require": "./dist/vue-gravatar.umd.cjs"
     }
   },
   "main": "./dist/vue-gravatar.umd.cjs",
   "module": "./dist/vue-gravatar.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -33,9 +26,10 @@
     "format": "prettier --write src/ tests/",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "test": "vitest",
-    "test:interactive": "vitest --ui"
+    "test:interactive": "vitest --ui",
+    "bump": "changelogen --bump",
+    "release": "npm run lint && npm run test && npm run build && changelogen --release && npm publish && git push --follow-tags"
   },
-  "types": "./dist/index.d.ts",
   "peerDependencies": {
     "vue": "^3.3.12"
   },
@@ -51,6 +45,7 @@
     "@vue/test-utils": "^2.4.3",
     "@vue/tsconfig": "^0.5.0",
     "autoprefixer": "^10.4.16",
+    "changelogen": "^0.5.5",
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.19.2",
     "happy-dom": "^12.10.3",
@@ -60,6 +55,7 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-dts": "^3.6.4",
+    "vite-plugin-node-polyfills": "^0.17.0",
     "vitest": "^1.0.4",
     "vue": "^3.3.12",
     "vue-tsc": "^1.8.25"
