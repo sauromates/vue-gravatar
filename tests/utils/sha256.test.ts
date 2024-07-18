@@ -1,9 +1,9 @@
-import { sha256 } from '../../src/utils/sha256'
+import { sha256 } from 'js-sha256'
 import { exampleHash } from '../helpers/exampleHash'
 
 describe('sha256 hash util', () => {
   it('produces 64 characters hex digest', async () => {
-    const hash = await sha256('test@example.org')
+    const hash = sha256.create().update('test@example.org').toString()
 
     expect(hash).toBeTruthy()
     expect(hash.length).toEqual(64)
@@ -11,7 +11,7 @@ describe('sha256 hash util', () => {
 
   it('produces correct hash', async () => {
     const expected: string = exampleHash
-    const hash = await sha256('test@example.org')
+    const hash = sha256.create().update('test@example.org').toString()
 
     expect(hash).toStrictEqual(expected)
   })

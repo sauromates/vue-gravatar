@@ -1,7 +1,7 @@
 import { ref, computed, watch } from 'vue'
+import { sha256 } from 'js-sha256'
 import type { GravatarType, GravatarComposableReturn, ImageParams } from '../types/gravatar'
 import type { Email, ImageSize } from '../types/util'
-import { sha256 } from '../utils/sha256'
 import { createEmail } from '../utils/email'
 import { imageSize } from '../utils/size'
 
@@ -27,7 +27,7 @@ export const useGravatar = (image: GravatarType): GravatarComposableReturn => {
 
   async function buildGravatarUrl(): Promise<void> {
     const gravatarBaseUrl: string = 'https://gravatar.com/avatar'
-    const gravatarEmailHash: string = await sha256(email.value)
+    const gravatarEmailHash: string = sha256.create().update(email.value).toString()
     const pathname = imageParams.value.extension ? gravatarEmailHash + imageParams.value.extension : gravatarEmailHash
     const gravatarSource = new URL(`${gravatarBaseUrl}/${pathname}`)
 
