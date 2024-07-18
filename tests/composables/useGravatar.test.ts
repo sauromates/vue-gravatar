@@ -102,4 +102,12 @@ describe('useGravatar', () => {
 
     expect(gravatar.value).toEqual(expectedNewUrl)
   })
+
+  it('returns empty string when source url is falsy', () => {
+    const { source, gravatar } = useGravatar({ email: 'test@example.com' })
+
+    source.value = null
+
+    expect(gravatar.value).toStrictEqual('')
+  })
 })
