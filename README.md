@@ -45,7 +45,7 @@ More granular control over a Gravatar implementation may be achieved with [`useG
 import { reactive } from 'vue'
 import { useGravatar, type GravatarType } from '@sauromates/vue-gravatar'
 
-const config = reactive<GravatarType>({
+const config: GravatarType = reactive({
   email: 'test@example.org',
   size: 80,
   default: 'mp',

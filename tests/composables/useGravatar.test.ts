@@ -59,7 +59,7 @@ describe('useGravatar', () => {
   })
 
   it('watches for email value', async () => {
-    const image = reactive<GravatarType>({ email: 'test@example.org' })
+    const image: GravatarType = reactive({ email: 'test@example.org' })
     const { email, gravatar, buildGravatarUrl } = useGravatar(image)
 
     await buildGravatarUrl()
@@ -77,7 +77,7 @@ describe('useGravatar', () => {
   })
 
   it('watches for image params change', async () => {
-    const image = reactive<GravatarType>({
+    const image: GravatarType = reactive({
       email: 'test@example.org',
       size: 80,
       default: 'mp',
