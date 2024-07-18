@@ -1,6 +1,6 @@
 {
   "name": "@sauromates/vue-gravatar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reusable, customizable and fully typed Gravatar component for Vue3 projects.",
   "license": "MIT",
   "author": "Vsevolod Girenko <vs.girenko@mail.ru>",
