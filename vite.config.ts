@@ -1,12 +1,11 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-  plugins: [vue(), dts({ rollupTypes: true }), nodePolyfills({ include: ['crypto', 'stream'] })],
+  plugins: [vue(), dts({ rollupTypes: true })],
   test: {
     globals: true,
     environment: 'happy-dom',
@@ -27,10 +26,11 @@ export default defineConfig({
       fileName: 'vue-gravatar'
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', 'js-sha256'],
       output: {
         globals: {
-          vue: 'Vue'
+          vue: 'Vue',
+          'js-sha256': 'jsSha256'
         }
       }
     }

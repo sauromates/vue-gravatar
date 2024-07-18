@@ -48,14 +48,14 @@ describe('useGravatar', () => {
     expect(composable.emptyParams.value).toBe(false)
 
     expectTypeOf(composable.email.value).toMatchTypeOf<Email>()
-    expectTypeOf(composable.size.value).toMatchTypeOf<ImageSize>()
+    expectTypeOf(composable.size.value).toMatchTypeOf<ImageSize | undefined>()
   })
 
   it('always returns valid string as gravatar url', () => {
     const image: GravatarType = { email: 'test@example.org' }
     const { gravatar } = useGravatar(image)
 
-    expect(gravatar.value).toStrictEqual('')
+    expect(gravatar.value).toStrictEqual(`https://gravatar.com/avatar/${exampleHash}`)
   })
 
   it('watches for email value', async () => {
