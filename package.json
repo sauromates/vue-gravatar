@@ -30,8 +30,10 @@
     "bump": "changelogen --bump",
     "release": "npm run lint && npm run test && npm run build && changelogen --release && npm publish && git push --follow-tags"
   },
+  "dependencies": {
+    "js-sha256": "^0.11.0"
+  },
   "peerDependencies": {
-    "js-sha256": "^0.11.0",
     "vue": "^3.3.12"
   },
   "devDependencies": {
@@ -50,7 +52,6 @@
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.19.2",
     "happy-dom": "^12.10.3",
-    "js-sha256": "^0.11.0",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
     "ts-node": "^10.9.2",

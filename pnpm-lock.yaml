@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      js-sha256:
+        specifier: ^0.11.0
+        version: 0.11.0
     devDependencies:
       '@rushstack/eslint-patch':
         specifier: ^1.6.1
@@ -53,9 +57,6 @@ importers:
       happy-dom:
         specifier: ^12.10.3
         version: 12.10.3
-      js-sha256:
-        specifier: ^0.11.0
-        version: 0.11.0
       postcss:
         specifier: ^8.4.32
         version: 8.4.32
